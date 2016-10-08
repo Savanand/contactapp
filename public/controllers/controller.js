@@ -17,7 +17,7 @@ var refresh = function(){
 
 refresh();
 
-$scope.addContact = function(){
+$scope.addContact = function(){  
 	console.log($scope.contact);
 	$http.post('/contactlist', $scope.contact).success(function(response){
 		 console.log(response);
@@ -56,6 +56,7 @@ $scope.edit = function(id){
 	console.log(id);
 	$http.get('/contactlist/' + id).success(function(response){
 		 $scope.contact = response;
+		 console.log("result in edit-get request"+$scope.contact);
 	});
 };
 

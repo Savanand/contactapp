@@ -59,7 +59,7 @@ app.delete('/contactlist/:id', function(req, res){
 
 app.get('/contactlist/:id', function(req, res){
 	var id= req.params.id;
-	console.log(id);
+	console.log("in get request"+id);
 	db.contactlist.findOne({_id: mongojs.ObjectId(id)}, function(err, doc){
 		res.json(doc);
 	});
